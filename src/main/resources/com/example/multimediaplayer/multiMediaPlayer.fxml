@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.multimediaplayer.MediaPlay">
+   <center>
+      <StackPane fx:id="stackPane" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
+         <children>
+            <MediaView fx:id="mediaView" fitHeight="400.0" fitWidth="400.0" />
+            <VBox alignment="BOTTOM_CENTER" maxHeight="80.0" prefHeight="80.0" StackPane.alignment="BOTTOM_CENTER">
+               <children>
+                  <Slider fx:id="progressBar" prefHeight="60.0" />
+                  <HBox fx:id="hBox" alignment="BOTTOM_CENTER" maxHeight="40.0" prefHeight="30.0" style="-fx-background-color: #b2b8b8;">
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                     <children>
+                        <Label fx:id="labelCurrentTime" textFill="#f0f5f0f0">
+                           <HBox.margin>
+                              <Insets bottom="20.0" right="15.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Arial Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <ImageView fx:id="imgStop" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#stopVideo">
+                           <image>
+                              <Image url="@stop.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets bottom="12.0" right="15.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <ImageView fx:id="imgPrevious" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#playPrevious">
+                           <image>
+                              <Image url="@playback.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets bottom="12.0" right="15.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <ImageView fx:id="imgPause" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#pauseVideo">
+                           <image>
+                              <Image url="@pause.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets bottom="12.0" right="15.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <ImageView fx:id="imgPlay" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#playVideo">
+                           <image>
+                              <Image url="@play.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets bottom="12.0" right="15.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <ImageView fx:id="imgNext" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#playNext">
+                           <image>
+                              <Image url="@fastForward.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets bottom="12.0" right="15.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Slider fx:id="volumeSlider" prefHeight="12.0" prefWidth="140.0">
+                           <padding>
+                              <Insets bottom="18.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Slider>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+   </center>
+</BorderPane>
